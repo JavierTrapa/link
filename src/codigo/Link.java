@@ -109,10 +109,14 @@ public class Link {
         x=x+dx;
         if(x<0){
             x=0;
+        }else if(x>650){
+            x=650;
         }
         y=y+dy;
         if(y<0){
             y=0;
+        }else if(y>620){
+            y=620;
         }
     }
 

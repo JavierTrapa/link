@@ -37,7 +37,7 @@ public class VentanaAnimacion extends javax.swing.JFrame {
     Link link=new Link();
     
     ArrayList <Esqueleto> listaEsqueletos=new ArrayList();
-    
+    Esqueleto esqueleto=new Esqueleto();
     /**
      * Creates new form VentanaAnimacion
      */
@@ -58,6 +58,7 @@ public class VentanaAnimacion extends javax.swing.JFrame {
         ///////////////////// dibujo a link //////////////
         link.setDir(direccion);
         link.dibuja(g2);
+        esqueleto.dibuja(g2);
         
         /*pintaLink(contador, pulsadaDerecha, pulsadaIzquierda, pulsadaArriba, pulsadaAbajo, g2);
         contador++;*/

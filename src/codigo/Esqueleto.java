@@ -21,13 +21,13 @@ public class Esqueleto {
     Image esqueleto;
     int contador=0;
     int dir=0;
-    boolean parado=true;
+    //boolean parado=true;
     private int x=200;
     private int y=200;
     
     public Esqueleto(){
         try {
-            esqueleto = ImageIO.read((getClass().getResource("/imagenes/esqueleto.png")));
+            esqueleto = ImageIO.read((getClass().getResource("/imagenes/esqueletos.png")));
         } catch (IOException ex) {
             Logger.getLogger(VentanaAnimacion.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -35,7 +35,7 @@ public class Esqueleto {
     
     public void dibuja (Graphics2D g2){
         int fila=0;
-        if(!parado){
+        //if(!parado){
             switch(dir){
                 case 1:
                     fila=5;//izquierda
@@ -55,23 +55,23 @@ public class Esqueleto {
                     break;
             }
             contador++;
-        }else{
+       /*}else{
             switch(dir){
                 case 1:
-                    fila=1;//izquierda
+                    fila=0;//izquierda
                     break;
                 case 2:
-                    fila=3;//derecha
+                    fila=0;//derecha
                     break;
                 case 3:
-                    fila=2;//arriba
+                    fila=0;//arriba
                     break;
                 case 4:
                     fila=0;//abajo
                     break;
             }
             contador=0;
-        }
+        }*/
         g2.drawImage(esqueleto,
                 x,  //posición x dentro del buffer
                 y,  //posición y dentro del buffer
@@ -110,10 +110,14 @@ public class Esqueleto {
         x=x+dx;
         if(x<0){
             x=0;
+        }else if(x>650){
+            x=650;
         }
         y=y+dy;
         if(y<0){
             y=0;
+        }else if(y>620){
+            y=620;
         }
     }
 
